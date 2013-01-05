@@ -1,0 +1,11 @@
+.DS_Store
+*~
+.*.sw[a-z]
+*/#*#
+#*#
+*.org
+.bundle
+.chef
+metadata.json
+TAGS
+tags

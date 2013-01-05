@@ -1,0 +1,10 @@
+#!/bin/sh
+exec 2>&1
+
+export HOME=<%= @options[:home] %>
+export CMD="<%= @options[:path] %> measure \
+ --uri <%= @options[:uri] %> \
+ --days <%= @options[:days] %> \
+ --sink <%= @options[:sink] %>,<%= @options[:host] %>,<%= @options[:port] %>"
+
+exec chpst -u <%= @options[:user] %> /usr/bin/env sh -c "sleep <%= @options[:frequency] %>; exec $CMD"
